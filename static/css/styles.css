@@ -10,17 +10,18 @@ body {
 /* Glassmorphism Effect */
 .glass-card {
   background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
 }
-
-/* Startup Shimmer Animation */
+/* Custom Preloader */
 .shimmer-text {
-  background: linear-gradient(90deg, #1e293b 25%, #3b82f6 50%, #1e293b 75%);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite linear;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #1e293b, #3b82f6, #06b6d4, #1e293b);
+  background-size: 300% 100%;
+  animation: shimmer 2.5s infinite linear;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @keyframes shimmer {
@@ -30,7 +31,7 @@ body {
 
 .progress-line {
   width: 0%;
-  animation: progress 1.5s ease-in-out forwards;
+  animation: progress 2.5s ease-in-out forwards;
 }
 
 @keyframes progress {
@@ -101,10 +102,6 @@ button:active::after {
 }
 
 
-
-
-/* Add these to your existing CSS */
-
 /* Neural Pulse Animation for Icons */
 [data-lucide="heart"], [data-lucide="activity"] {
   animation: pulse-red 2s infinite;
@@ -146,3 +143,18 @@ button:active::after {
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
 }
+
+
+#explainList li::before {
+    content: "⚠ ";
+    color: #f87171;
+    font-weight: bold;
+}
+
+
+canvas {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
