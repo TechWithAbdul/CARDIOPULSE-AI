@@ -61,14 +61,14 @@ body {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
   background: #050810;
 }
 ::-webkit-scrollbar-thumb {
   background: #1e293b;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #3b82f6;
@@ -201,8 +201,6 @@ nav:hover {
 section {
     min-height: 100vh;
     scroll-snap-align: start;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
