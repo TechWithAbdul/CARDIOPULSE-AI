@@ -149,6 +149,7 @@ button:active::after {
     content: "⚠ ";
     color: #f87171;
     font-weight: bold;
+    text-align: center;
 }
 
 
@@ -158,3 +159,130 @@ canvas {
 }
 
 
+/* ========================= */
+/* NAVBAR STYLING ADDED      */
+/* ========================= */
+
+nav {
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+nav:hover {
+  background: rgba(5, 8, 16, 0.85);
+  box-shadow: 0 4px 20px rgba(217, 221, 227, 0.15);
+  border: radius 29px;
+}
+
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(59,130,246,0.9);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ========================= */
+/* PAGE SECTION STYLING      */
+/* ========================= */
+section {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+html, body {
+    scroll-snap-type: y mandatory;
+}
+
+
+#home h1 {
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%   { text-shadow: 0 0 0px rgba(59,130,246,0); }
+  50%  { text-shadow: 0 0 12px rgba(59,130,246,0.6); }
+  100% { text-shadow: 0 0 0px rgba(59,130,246,0); }
+}
+
+#home p {
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards 0.3s;
+}
+
+#home a {
+  box-shadow: 0 6px 20px rgba(59,130,246,0.35);
+  transition: all 0.3s ease;
+}
+
+#home a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(59,130,246,0.55);
+}
+
+/* ========================= */
+/* ABOUT SECTION STYLING     */
+/* ========================= */
+
+#about {
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards 0.4s;
+  margin-top: 200px;
+}
+
+#about h2 {
+  text-shadow: 0 0 12px rgba(59,130,246,0.4);
+}
+
+#about div:hover {
+  transform: translateY(-4px);
+}
+
+#about div {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.25);
+}
+
+/* ========================= */
+/* SMOOTH SCROLL BEHAVIOR    */
+/* ========================= */
+
+html {
+  scroll-behavior:smooth;
+}
+/* FIX PREDICTION SECTION CENTERING */
+#predict {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: auto;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#probabilityCircle {
+    margin: 0 auto;
+}

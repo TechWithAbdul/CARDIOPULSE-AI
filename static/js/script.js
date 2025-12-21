@@ -316,3 +316,73 @@ function showExplainability() {
         explainList.appendChild(item);
     });
 }
+/* ============================= */
+/* SMOOTH NAVIGATION BEHAVIOR    */
+/* ============================= */
+
+document.querySelectorAll('nav a.nav-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+
+/* ============================= */
+/* ACTIVE NAV ITEM HIGHLIGHT     */
+/* ============================= */
+
+const navItems = document.querySelectorAll('nav a.nav-link');
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(sec => {
+        const top = window.scrollY;
+        if (top >= sec.offsetTop - 120) {
+            current = sec.getAttribute("id");
+        }
+    });
+
+    navItems.forEach(li => {
+        li.classList.remove("text-blue-400");
+        li.style.opacity = "0.5";
+        if (li.getAttribute("href") === `#${current}`) {
+            li.classList.add("text-blue-400");
+            li.style.opacity = "1";
+        }
+    });
+});
+
+
+/* ============================= */
+/* SECTION REVEAL ON SCROLL      */
+/* ============================= */
+
+const revealElements = document.querySelectorAll("#home, #predict, #about");
+
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    },
+    { threshold: 0.2 }
+);
+
+revealElements.forEach((el) => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(30px)";
+    el.style.transition = "opacity .8s ease, transform .8s ease";
+    revealObserver.observe(el);
+});
