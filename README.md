@@ -89,3 +89,15 @@ Endpoint: Execute Diagnostic Prediction
 The application automatically shifts styles based on the specific prediction metrics received:
 * Risk Score $\ge$ 50%: Intercepted as HIGH RISK. The UI changes accents to crimson red and issues a warning urging professional medical consultations.
 * Risk Score < 50%: Intercepted as LOW RISK. UI transitions to standard emerald green, signaling data ranges sit securely within safer baseline tracking parameters.
+
+### Screenshots:
+
+<img width="1920" height="1080" alt="Screenshot (2)" src="https://github.com/user-attachments/assets/16ca1294-e3dc-46ac-865c-aa0cef633ac2" />
+<img width="1920" height="1080" alt="Screenshot (3)" src="https://github.com/user-attachments/assets/598d4b8c-b1db-48ca-a89a-47f979f5ab4e" />
+<img width="1920" height="1080" alt="Screenshot (4)" src="https://github.com/user-attachments/assets/3fea67fe-6c8a-4918-9d4a-2003f03aa0a8" />
+<img width="1920" height="1080" alt="Screenshot (5)" src="https://github.com/user-attachments/assets/8670ebd3-f473-4de0-94c1-8089591c601f" />
+<img width="1920" height="1080" alt="Screenshot (6)" src="https://github.com/user-attachments/assets/f879bf1d-24a4-408a-b591-ea8204d904c9" />
+
+
+
+
